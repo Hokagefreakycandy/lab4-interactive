@@ -19,9 +19,9 @@ function sendEmail(e)
     e.preventDefault();
     Email.send({
         Host : "smtp.elasticemail.com",
-        Username : "mockba@tlu.ee",
-        Password : "1B8946CA194617462BD0C2C272192FA8E45D",
-        To : "mockba@tlu.ee",
+        /* Username : "put your username between the quotes", */
+        /* Password : "put your password between the quotes", */
+        /* To : "some email ", */
         From : email.value,
         Subject : subject.value,
         Body : msg.value
