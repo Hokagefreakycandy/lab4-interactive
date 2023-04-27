@@ -4,21 +4,30 @@ const btn = document.getElementById("colorChanger");
 const colorTxt = document.querySelector(".color");
 const infoSection = document.querySelector(".information");
 
-btn.addEventListener('click',function(){
-    console.log("Button Clicked");
-    let randomIndex = getRandomNumber();
+function generateRandomHexColor() {
+    const hexCharacters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+        const randomIndex = Math.floor(Math.random() * 16);
+        color += hexCharacters[randomIndex];
+    }
+    return color;
+}
 
-    let randomRGB = "rgba(" + getRandomNumber() + "," + getRandomNumber() + "," + getRandomNumber() + ")";
-    infoSection.style.backgroundColor = randomRGB;
-    colorTxt.textContent = randomRGB;
-   // infoSection.style.backgroundColor = colors[randomIndex];
-   // colorTxt.textContent = colors[randomIndex];
+btn.addEventListener('click', function (){
+const randomHexColor = generateRandomHexColor();
+console.log(randomHexColor);
+colorTxt.innerHTML=randomHexColor;
+infoSection.style.backgroundColor=randomHexColor;
 })
 
-function getRandomNumber()
-{
+
+
+
+function getRandomNumber() {
     //let result = Math.floor(Math.random()*colors.length);
-    let result = Math.floor(Math.random()*256);
+    let result = Math.floor(Math.random() * 256);
     console.log(result);
     return result;
 }
+
