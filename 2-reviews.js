@@ -39,7 +39,7 @@ const prevBtn = document.querySelector('.prev-btn');
 const nextBtn = document.querySelector('.next-btn');
 const randomBtn = document.querySelector('.random-btn');
 
-let currentItem = 1;
+let currentItem = 0;
 
 window.addEventListener('DOMContentLoaded',function()
 {
@@ -62,6 +62,9 @@ nextBtn.addEventListener('click',function(){
   {
     nextBtn.disabled = true;
   }
+
+  prevBtn.disabled = false;
+
   showPerson(currentItem);
 })
 
@@ -69,9 +72,11 @@ prevBtn.addEventListener('click',function(){
   currentItem--;
   if(currentItem <=0 )
   {
-
     prevBtn.disabled = true;
   }
+  nextBtn.disabled = false;
+  
+
   showPerson(currentItem);
 })
 
