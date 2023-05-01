@@ -78,3 +78,12 @@ randomBtn.addEventListener('click',function(){
   let randomIndex = Math.floor(Math.random()*reviews.length);
   showPerson(randomIndex);
 })
+
+
+//* 
+function disableButton(randomBtn) {
+  const button = document.getElementById(randomBtn);
+  if (button) {
+    button.disabled = true;
+  }
+}
