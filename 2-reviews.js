@@ -58,18 +58,19 @@ function showPerson(person)
 
 nextBtn.addEventListener('click',function(){
   currentItem++;
-  if(currentItem > reviews.length -1 )
+  if(currentItem >= reviews.length -1 )
   {
-    currentItem = 0;
+    nextBtn.disabled = true;
   }
   showPerson(currentItem);
 })
 
 prevBtn.addEventListener('click',function(){
   currentItem--;
-  if(currentItem <0 )
+  if(currentItem <=0 )
   {
-    currentItem = reviews.length - 1;
+
+    prevBtn.disabled = true;
   }
   showPerson(currentItem);
 })
@@ -78,12 +79,3 @@ randomBtn.addEventListener('click',function(){
   let randomIndex = Math.floor(Math.random()*reviews.length);
   showPerson(randomIndex);
 })
-
-
-//* 
-function disableButton(randomBtn) {
-  const button = document.getElementById(randomBtn);
-  if (button) {
-    button.disabled = true;
-  }
-}
