@@ -117,6 +117,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
     });
 
+
     displayMenu = displayMenu.join("");
     
       sectionCenter.innerHTML = displayMenu;
@@ -129,3 +130,21 @@ window.addEventListener("DOMContentLoaded", function () {
   {
     
   }
+
+
+
+const filterButtons = document.querySelectorAll('.filter-btn');
+
+filterButtons.forEach(function (btn) {
+  btn.addEventListener('click',function(){
+    const clickedOnCategory = btn.getAttribute("data-id");
+
+    const filteredMenu = menuList.filter(function imFilteringAmenu(item) {
+      return clickedOnCategory == "all" || item.category == clickedOnCategory;
+    });
+    console.log('yun feels happy when it shows on the console',clickedOnCategory, filteredMenu);
+
+    displayMenuItems(filteredMenu);
+  });
+
+});
